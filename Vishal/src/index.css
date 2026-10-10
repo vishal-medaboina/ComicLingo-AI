@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8f6f0] text-slate-900 font-sans;
+    background-image: radial-gradient(#d3c9b8 0.75px, transparent 0.75px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Comic Styling Utilities */
+.comic-border {
+  border: 2.5px solid #0f2b32;
+  box-shadow: 3px 3px 0px #0f2b32;
+}
+
+.comic-border-thick {
+  border: 3.5px solid #0f2b32;
+  box-shadow: 5px 5px 0px #0f2b32;
+}
+
+.comic-border-coral {
+  border: 3px solid #0f2b32;
+  box-shadow: 4px 4px 0px #ee3e25;
+}
+
+.comic-panel {
+  border: 3px solid #0f2b32;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 4px 4px 0px rgba(15, 43, 50, 0.85);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comic-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(15, 43, 50, 0.95);
+}
+
+/* Speech bubbles */
+.speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border: 2.5px solid #0f2b32;
+  border-radius: 16px;
+  box-shadow: 2px 2px 0px rgba(15, 43, 50, 0.6);
+  padding: 10px 14px;
+}
+
+.speech-bubble-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 24px;
+  border-width: 10px 8px 0;
+  border-style: solid;
+  border-color: #0f2b32 transparent;
+  display: block;
+  width: 0;
+}
+
+.speech-bubble-bottom::before {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 26px;
+  border-width: 8px 6px 0;
+  border-style: solid;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+}
+
+.speech-bubble-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0f2b32;
+  display: block;
+  width: 0;
+}
+
+.speech-bubble-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+  display: block;
+  width: 0;
+  z-index: 1;
+}
+
+/* Thought bubble */
+.thought-bubble {
+  position: relative;
+  background: #f1f8fa;
+  border: 2.5px dashed #0f2b32;
+  border-radius: 20px;
+  padding: 8px 14px;
+}
+
+/* Caption box */
+.caption-box {
+  background: #fff8d6;
+  border: 2px solid #0f2b32;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  display: inline-block;
+  box-shadow: 2px 2px 0px rgba(15, 43, 50, 0.5);
+}
+
+/* Sound effects */
+.sfx-badge {
+  font-family: 'Bangers', cursive, sans-serif;
+  transform: rotate(-4deg);
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0px #0f2b32;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1ede4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b6170;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f2b32;
+}
